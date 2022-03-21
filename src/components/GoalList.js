@@ -1,13 +1,19 @@
 import React from "react";
 import "./GoalList.css";
 
-const GoalList = () => {
+const GoalList = (props) => {
+  const border = {
+    border: "2px solid #ccc ",
+  };
   return (
     <ul className="goal-list">
-      <li>Selesaikan Kursus</li>
-      <li>Pelajari Semua Topik Utama Kursus</li>
-      <li>Bantu semua orang di Q&amp;A kursus</li>
-      <li>Coba komit dan push dari kantor</li>
+      {props.goals.map((goal) => {
+        return (
+          <li key={goal.id} style={border}>
+            {goal.text}
+          </li>
+        );
+      })}
     </ul>
   );
 };
