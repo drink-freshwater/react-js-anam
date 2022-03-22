@@ -10,10 +10,15 @@ function App() {
     { id: "cg3", text: "Bantu semua orang di Q&A kursus" },
     { id: "cg4", text: "Coba komit dan push dari kantor" },
   ];
+
+  const addNewGoal = (newGoal) => {
+    courseGoals.push(newGoal);
+    console.log(courseGoals);
+  };
   return (
     <div className="course-goals">
       <h2>Tujuan Kursus</h2>
-      <NewGoal />
+      <NewGoal onAddGoal={addNewGoal} />
       <GoalList goals={courseGoals} />
     </div>
   );
